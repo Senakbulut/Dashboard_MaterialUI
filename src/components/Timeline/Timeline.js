@@ -13,10 +13,12 @@ import HotelIcon from '@material-ui/icons/Hotel';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import './Timeline.css'
+import Alert from '../Alert/Alert'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-
+    width:'70px',
     padding: '6px 16px',
   },
   secondaryTail: {
@@ -31,9 +33,6 @@ export default function CustomizedTimeline() {
     <Timeline align="alternate">
       <TimelineItem>
         <TimelineOppositeContent>
-          <Typography variant="body2" color="textSecondary">
-            9:30 am
-          </Typography>
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot>
@@ -43,18 +42,18 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
-              Eat
-            </Typography>
-            <Typography>Because you need strength</Typography>
+             <Typography variant="h6" component="h1">
+             <input type="text" placeholder="Your Goal" />
+            </Typography> 
+            {/* <Typography>Because you need strength</Typography> */}
           </Paper>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent>
-          <Typography variant="body2" color="textSecondary">
+          {/* <Typography variant="body2" color="textSecondary">
             10:00 am
-          </Typography>
+          </Typography> */}
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary">
@@ -65,9 +64,9 @@ export default function CustomizedTimeline() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Code
+            <input type="text" placeholder="Your Goal" />
             </Typography>
-            <Typography>Because it&apos;s awesome!</Typography>
+            {/* <Typography>Because it&apos;s awesome!</Typography> */}
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -81,9 +80,9 @@ export default function CustomizedTimeline() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Sleep
+            <input type="text" placeholder="Your Goal" />
             </Typography>
-            <Typography>Because you need rest</Typography>
+            {/* <Typography>Because you need rest</Typography> */}
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -96,12 +95,13 @@ export default function CustomizedTimeline() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Repeat
+            <input type="text" placeholder="Your Goal" />
             </Typography>
-            <Typography>Because this is the life you love!</Typography>
+            {/* <Typography>Because this is the life you love!</Typography> */}
           </Paper>
         </TimelineContent>
       </TimelineItem>
+    <Alert/>
     </Timeline>
   );
 }

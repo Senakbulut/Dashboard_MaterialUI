@@ -8,11 +8,19 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
     },
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
     position:'absolute',
     right:'4%',
     top:'8%',
-    
   },
+  
 }));
 
 export default function ImageAvatars() {
@@ -20,8 +28,7 @@ export default function ImageAvatars() {
 
   return (
     <div className={classes.root}>
-      <Avatar alt="Sena" src="/static/images/avatar/1.jpg" />
-    
+      <Avatar alt="Remy Sharp" src="images/avatar.png" className={classes.large} />
     </div>
   );
 }

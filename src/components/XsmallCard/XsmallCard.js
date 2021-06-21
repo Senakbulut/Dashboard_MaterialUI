@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     bottom: "5%",
     left: "31%",
-    marginLeft: "2%"
+    marginLeft: "2%",
+    backgroundImage:"linear-gradient(to right, rgb(28, 216, 210), rgb(147, 237, 199))"
   },
   details: {
     display: 'flex',
@@ -38,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     height: 38,
     width: 38,
   },
+  color:{
+    color: '#fff'
+  }
 }));
 
 export default function XsmallCard() {
@@ -48,14 +52,14 @@ export default function XsmallCard() {
     <Card className={classes.root}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
+          <Typography component="h5" variant="h5" className={classes.color} >
             Live From Space
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
+          <br />
+          <Typography variant="subtitle1"className={classes.color} >
             Mac Miller
           </Typography>
         </CardContent>
-        <br />
         <br />
         {/* <div className={classes.controls}>
           <IconButton aria-label="previous">

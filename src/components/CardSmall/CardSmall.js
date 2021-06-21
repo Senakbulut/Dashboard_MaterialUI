@@ -9,12 +9,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardLarge from '../CardLarge/CardLarge';
 import './CardSmall.css'
-import XsmallCard from '../XsmallCard/XsmallCard';
+import List from '../List/List'
+
 const useStyles = makeStyles({
   root: {
     maxWidth: "28%",
     maxHeight: "31%",
-    marginLeft: "2%"
+    marginLeft: "2%",
+    
   },
   media: {
     height: 100,
@@ -25,10 +27,10 @@ export default function CardSmall() {
   const classes = useStyles();
 
   return (
-      <div>
+      <div  >
           <br />
           <br />
-      <Card className={classes.root}>
+      <Card className={classes.root} style={{backgroundImage:"linear-gradient(to right, rgb(255, 175, 189), rgb(255, 195, 160))"}}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -56,30 +58,9 @@ export default function CardSmall() {
     </Card>
     <br />
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
+    
+       <List/>
+     
     </Card>
     <CardLarge className="LCard"/>
     
