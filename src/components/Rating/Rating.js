@@ -19,6 +19,7 @@ const StyledRating = withStyles({
   iconHover: {
     color: '#ff3d47',
   },
+  
 })(Rating);
 
 const customIcons = {
@@ -57,14 +58,14 @@ export default function CustomizedRatings() {
   return (
     <div>
 
-      <Box component="fieldset" mb={3} borderColor="transparent">
-        <Typography component="legend">Custom icon and color</Typography>
+      <Box component="fieldset" mb={3} borderColor="transparent" style={{position:"absolute"},{left:'80%'}} >
         <StyledRating
           name="customized-color"
           defaultValue={2}
           getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
           precision={0.5}
-          icon={<FavoriteIcon fontSize="inherit" />}
+          icon={<FavoriteIcon fontSize="small" />}
+          style={{position:"absolute"},{left:'105%'}}
         />
       </Box>
     

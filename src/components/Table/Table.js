@@ -55,9 +55,9 @@ const rows = [
 const useStyles = makeStyles({
   root: {
     width: '36%',
-    height: '400px',
+    height: '420px',
     position: "absolute",
-    bottom: "5.2%",
+    bottom: "1.5%",
     right: "2%"
   },
   container: {

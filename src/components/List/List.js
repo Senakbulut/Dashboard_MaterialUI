@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     height: '31%',
-    backgroundColor: theme.palette.background.paper,
+    backgroundImage:"linear-gradient(to right, rgb(255, 175, 189), rgb(255, 195, 160))",
     marginBottom:'-10px'
   },
   textsize:{

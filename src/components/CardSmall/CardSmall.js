@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import CardLarge from '../CardLarge/CardLarge';
 import './CardSmall.css'
 import List from '../List/List'
+import CalendarR from '../Calendar/CalendarR';
 
 const useStyles = makeStyles({
   root: {
@@ -30,37 +31,20 @@ export default function CardSmall() {
       <div  >
           <br />
           <br />
-      <Card className={classes.root} style={{backgroundImage:"linear-gradient(to right, rgb(255, 175, 189), rgb(255, 195, 160))"}}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
+      <Card className={classes.root} >
+      
+       <CardActionArea>
+       
+       <List/>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
+  
+      
     </Card>
     <br />
     <Card className={classes.root}>
-    
-       <List/>
-     
+      <br />
+       <CalendarR/>
+       <br />
     </Card>
     <CardLarge className="LCard"/>
     

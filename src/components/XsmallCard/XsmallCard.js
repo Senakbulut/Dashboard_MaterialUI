@@ -12,9 +12,9 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    maxWidth: 345,
+    width: 345,
     position: "absolute",
-    bottom: "5%",
+    bottom: "1.5%",
     left: "31%",
     marginLeft: "2%",
     backgroundImage:"linear-gradient(to right, rgb(28, 216, 210), rgb(147, 237, 199))"
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 0 auto',
   },
   cover: {
+    marginLeft:"8%",
     width: 151,
   },
   controls: {
@@ -49,19 +50,20 @@ export default function XsmallCard() {
   const theme = useTheme();
 
   return (
+    <div>
+       
     <Card className={classes.root}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5" className={classes.color} >
-            Live From Space
+           Paradise
           </Typography>
           <br />
           <Typography variant="subtitle1"className={classes.color} >
-            Mac Miller
+           Coldplay
           </Typography>
         </CardContent>
-        <br />
-        {/* <div className={classes.controls}>
+        <div className={classes.controls}>
           <IconButton aria-label="previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
           </IconButton>
@@ -71,13 +73,16 @@ export default function XsmallCard() {
           <IconButton aria-label="next">
             {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
           </IconButton>
-        </div> */}
+        </div>
+    
       </div>
       <CardMedia
         className={classes.cover}
-        image="/static/images/cards/live-from-space.jpg"
+        image="images/paradise.jpeg"
         title="Live from space album cover"
       />
     </Card>
+    </div>
+   
   );
 }
