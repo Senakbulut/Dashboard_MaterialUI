@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
+import { useEffect, useState } from 'react';
+import PauseCircleOutlineOutlinedIcon from '@material-ui/icons/PauseCircleOutlineOutlined';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,10 +46,33 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff'
   }
 }));
+const useAudio = url => {
+  url="https://firebasestorage.googleapis.com/v0/b/dashboard-materialui.appspot.com/o/Coldplay-Paradise.mp3?alt=media&token=272d8211-e70b-46f9-9c36-f00d65970f8d";
+  const [audio] = useState(new Audio(url));
+  const [playing, setPlaying] = useState(false);
 
-export default function XsmallCard() {
+  const toggle = () => setPlaying(!playing);
+
+  useEffect(() => {
+      playing ? audio.play() : audio.pause();
+    },
+    [playing]
+  );
+
+  useEffect(() => {
+    audio.addEventListener('ended', () => setPlaying(false));
+    return () => {
+      audio.removeEventListener('ended', () => setPlaying(false));
+    };
+  }, []);
+
+  return [playing, toggle];
+};
+
+const XsmallCard = ({url}) => {
   const classes = useStyles();
   const theme = useTheme();
+  const [playing, toggle] = useAudio(url);
 
   return (
     <div>
@@ -67,8 +92,9 @@ export default function XsmallCard() {
           <IconButton aria-label="previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
           </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
+          <IconButton aria-label="play/pause" onClick={toggle}>
+          {playing ? <PauseCircleOutlineOutlinedIcon className={classes.playIcon}  /> : <PlayArrowIcon className={classes.playIcon}  />}
+            
           </IconButton>
           <IconButton aria-label="next">
             {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
@@ -86,3 +112,4 @@ export default function XsmallCard() {
    
   );
 }
+export default XsmallCard;

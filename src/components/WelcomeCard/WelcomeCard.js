@@ -47,7 +47,7 @@ export default function WelcomeCard() {
   const theme = useTheme();
 
   return (
-    <Card className={classes.root} style={{backgroundImage:"linear-gradient(110.3deg, rgb(255, 222, 122) 5.2%, rgb(255, 230, 153) 51.5%, rgb(255, 225, 133) 95.9%)"}}>
+    <Card className={classes.root} style={{backgroundImage:"linear-gradient(110.3deg, rgb(255, 222, 122) 20.2%, rgb(255, 230, 153) 41.5%, rgb(255, 225, 133) 85.9%)"}}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5">
